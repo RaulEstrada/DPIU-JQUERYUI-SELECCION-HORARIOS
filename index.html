@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>JQuery UI: Selección de franja</title>
+		<meta name="author" content="Raúl Estrada Ballesteros"/>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="public/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="public/jquery-ui-1.12.1/jquery-ui.min.css"/>
+		<link rel="stylesheet" href="public/jquery-ui.1.12.1/jquery-ui.structure.min.css"/>
+		<link rel="stylesheet" href="public/jquery-ui.1.12.1/jquery-ui.theme.min.css"/>
+		<link rel="stylesheet" href="public/css/miCSS.css"/>
+		<script src="public/jquery-ui-1.12.1/external/jquery/jquery.js"></script>
+		<script src="public/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+		<script src="public/js/miScript.js"></script>
+	</head>
+	<body>
+		<main class="container-fluid">
+			<div class="page-header text-center">
+				<h1>Selección de franja horaria</h1>
+			</div>
+			<div class="contrainer-fluid">
+				<div class="row">
+					<div class="col-xs-3 col-sm-2 col-md-1 text-right">
+						<p>Hecho</p>
+					</div>
+					<div class="col-xs-8 col-sm-9 col-md-10" id="progressbar">
+						<div class="progress-label">0 %</div>
+					</div>
+				</div>
+			</div>
+			<div class="jumbotron">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-sm-6">
+							<fieldset>
+								<legend>Selección del día</legend>
+								<div id="contenedorDias" class="controlgroup"></div>
+							</fieldset>
+						</div>
+						<div class="col-sm-6">
+							<fieldset>
+								<legend>Selección de la franja</legend>
+								<div id="contenedorFranja" class="controlgroup"></div>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<div id="dialog" title="Límite de opciones">
+  			<p>Está intentando marcar más opciones de las permitidas. Por favor, seleccione dos o tres únicamente</p>
+		</div>
+	</body>
+</html>
