@@ -19,16 +19,6 @@
 			<div class="page-header text-center">
 				<h1>Selección de franja horaria</h1>
 			</div>
-			<div class="contrainer-fluid">
-				<div class="row">
-					<div class="col-xs-3 col-sm-2 col-md-1 text-right">
-						<p>Hecho</p>
-					</div>
-					<div class="col-xs-8 col-sm-9 col-md-10" id="progressbar">
-						<div class="progress-label">0 %</div>
-					</div>
-				</div>
-			</div>
 			<div class="jumbotron">
 				<div class="container-fluid">
 					<div class="row">
@@ -45,12 +35,15 @@
 							</fieldset>
 						</div>
 					</div>
+					<div class="row text-center">
+						<button class="green" onclick="checkTerminar()">Terminar</button>
+					</div>
 				</div>
 			</div>
 		</main>
 
-		<div id="dialog" title="Límite de opciones">
-  			<p>Está intentando marcar más opciones de las permitidas. Por favor, seleccione dos o tres únicamente</p>
+		<div id="dialog">
+  			<p id="msg"></p>
 		</div>
 	</body>
 </html>

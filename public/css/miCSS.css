@@ -1,17 +1,9 @@
-.ui-progressbar {
-    position: relative;
-    padding: 0;
-}
-
-.progress-label {
-    position: absolute;
-    left: 50%;
-    top: 4px;
-    font-weight: bold;
-    text-shadow: 1px 1px 0 #fff;
-}
-
 .first-inner-label {
     margin-right: 1em;
     padding: 0;
+}
+
+.green {
+    background: #99ff99 !important;
+    margin-top: 3em;
 }

@@ -1,30 +1,19 @@
 $(document).ready(function() {
-    var progressbar = $("#progressbar");
-    var progressLabel = $(".progress-label");
-    inicializarProgressBar();
     inicializarContenedorDias();
     inicializarFranjas();
 
     $("input").checkboxradio();
     $(".controlgroup").controlgroup({"direction": "vertical"});
+    $("button").button({
+        icon: "ui-icon-check",
+        iconPosition: "left"
+    });
     $(".controlgroup-horizontal").controlgroup({"direction": "horizontal"});
     $("#dialog").dialog({
         autoOpen: false,
         modal: true
     });
 });
-
-function inicializarProgressBar() {
-    $("#progressbar").progressbar({
-        value: true,
-        change: function() {
-          progressLabel.text(progressbar.progressbar("value") + "%" );
-        },
-        complete: function() {
-          progressLabel.text("Completado");
-        }
-    });
-}
 
 function inicializarContenedorDias() {
     var contenedorDias = $("#contenedorDias");
@@ -40,6 +29,8 @@ function checkLimit(source) {
     if (source.checked) {
         var franjasSeleccionadas = $("#contenedorFranja input:checked");
         if (franjasSeleccionadas.length > 3) {
+            $("#msg").text("Está intentando marcar más opciones de las permitidas. Por favor, seleccione dos o tres únicamente");
+            $("#dialog").dialog( "option", "title", "Límite de opciones" );
             $("#dialog").dialog("open");
             $(source).prop("checked", false);
         }
@@ -62,4 +53,17 @@ function inicializarFranjas() {
             $("#" + this.id + "-wrapper").remove();
         }
     });
+}
+
+function checkTerminar() {
+    var franjasSeleccionadas = $("#contenedorFranja input:checked");
+    if (franjasSeleccionadas.length < 2) {
+        $("#msg").text("Está intentando marcar menos opciones de las permitidas. Por favor, seleccione dos o tres");
+        $("#dialog").dialog( "option", "title", "Límite de opciones" );
+        $("#dialog").dialog("open");
+    } else {
+        $("#msg").text("Todo correcto");
+        $("#dialog").dialog( "option", "title", "OK" );
+        $("#dialog").dialog("open");
+    }
 }
